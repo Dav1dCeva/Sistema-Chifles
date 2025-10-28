@@ -5,6 +5,13 @@ import { ClientesModule } from './clientes/clientes.module';
 import { PedidosModule } from './pedido/pedido.module';
 import { Cliente } from './clientes/entities/cliente.entity';
 import { Pedido } from './pedido/entities/pedido.entity';
+import { Factura } from './factura/entities/factura.entity';
+import { Producto } from './productos/entities/producto.entity';
+import { Insumo } from './insumos/entities/insumo.entity';
+import { DetallePedido } from './detalles-pedido/entities/detalles-pedido.entity';
+import { ProductoInsumo } from './productos-insumos/entities/productos-insumo.entity';
+import { OrdenProduccion } from './ordenes-produccion/entities/ordenes-produccion.entity';
+import { DetalleOrdenProduccion } from './detalles-orden-produccion/entities/detalles-orden-produccion.entity';
 import { FacturasModule } from './factura/factura.module';
 import { ProductosModule } from './productos/productos.module';
 import { InsumosModule } from './insumos/insumos.module';
@@ -23,12 +30,22 @@ import { DetallesOrdenProduccionModule } from './detalles-orden-produccion/detal
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [Cliente, Pedido],
+      entities: [
+        Cliente,
+        Pedido,
+        Factura,
+        Producto,
+        Insumo,
+        DetallePedido,
+        ProductoInsumo,
+        OrdenProduccion,
+        DetalleOrdenProduccion,
+      ],
       synchronize: true,
     }),
     ClientesModule,
     PedidosModule,
-  FacturasModule,
+    FacturasModule,
     ProductosModule,
     InsumosModule,
     DetallesPedidoModule,
