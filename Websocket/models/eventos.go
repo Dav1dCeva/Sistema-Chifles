@@ -1,6 +1,12 @@
 package models
 
-type EventMessage struct {
-    Type    string      `json:"type"`
-    Payload interface{} `json:"payload"`
-}
+const (
+    ProductCreated     = "product.created"
+    ProductUpdated     = "product.updated"
+    ProductDeleted     = "product.deleted"
+    SupplyLow          = "supply.low"
+    OrderCreated       = "order.created"
+    OrderCompleted     = "order.completed"
+    ProductionStarted  = "production.started"
+    ProductionFinished = "production.completed"
+)
